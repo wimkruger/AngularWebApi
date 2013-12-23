@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Profile Name
+                <span class="pull-right">List Order</span>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                <a data-ng-repeat="profile in myProfiles | orderBy: 'Sequence'"  ui-sref="profiles.details({profileId:profile.id})" class="list-group-item">
+                    <span class="badge">{{profile.Sequence}}</span>
+                    {{profile.Name}}
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

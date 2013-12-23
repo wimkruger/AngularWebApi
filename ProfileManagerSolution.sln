@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfileManager", "ProfileManager\ProfileManager.csproj", "{2DA4A24C-B791-4D1C-AAC7-43FC525AE203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{FE094320-FB2E-4E50-A7B2-F329E6F627C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{2C82F171-33D9-4F7F-9C90-BD167458E3C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0A8A218-4B58-41DA-9586-C43E3F75709C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ProfileManager\\ProfileManager.csproj
+		SccProjectName1 = ProfileManager
+		SccLocalPath1 = ProfileManager
+		SccProjectUniqueName2 = Domain\\Domain.csproj
+		SccProjectName2 = Domain
+		SccLocalPath2 = Domain
+		SccProjectUniqueName3 = DataAccess\\DataAccess.csproj
+		SccProjectName3 = DataAccess
+		SccLocalPath3 = DataAccess
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DA4A24C-B791-4D1C-AAC7-43FC525AE203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA4A24C-B791-4D1C-AAC7-43FC525AE203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA4A24C-B791-4D1C-AAC7-43FC525AE203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA4A24C-B791-4D1C-AAC7-43FC525AE203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE094320-FB2E-4E50-A7B2-F329E6F627C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE094320-FB2E-4E50-A7B2-F329E6F627C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE094320-FB2E-4E50-A7B2-F329E6F627C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE094320-FB2E-4E50-A7B2-F329E6F627C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C82F171-33D9-4F7F-9C90-BD167458E3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C82F171-33D9-4F7F-9C90-BD167458E3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C82F171-33D9-4F7F-9C90-BD167458E3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C82F171-33D9-4F7F-9C90-BD167458E3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

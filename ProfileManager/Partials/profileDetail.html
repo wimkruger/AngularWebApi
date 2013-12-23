@@ -1,0 +1,61 @@
+﻿
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Profile Details
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="profileName">Profile Name</label>
+                    <div class="col-sm-10">
+                        <input id="profileName" name="profileName" type="text" class="form-control" ng-model="currentProfile.Name">
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="profileDesc">Profile Description</label>
+                    <div class="col-sm-10">
+                        <input id="profileDesc" name="profileDesc" type="text" class="form-control" ng-model="currentProfile.Description">
+                    </div>
+                </div>
+            </form>
+            <br/>
+            	<div class="tabbable" id="tabs-922694">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-303428" data-toggle="tab">Map Services</a>
+					</li>
+					<li>
+						<a href="#panel-210508" data-toggle="tab">Active Directory</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-303428">
+						<p>
+						    <table class="table table-striped">
+						        <tr>
+						            <th>Url</th>
+						            <th>Map Service Type</th>
+						        </tr>
+						        <tr data-ng-repeat="mapService in mapServices">
+						            <td>{{mapService.Url}}</td>
+                                    <td>{{mapService.ServiceType}}</td>
+						        </tr>
+						    </table>
+						</p>
+					</div>
+					<div class="tab-pane" id="panel-210508">
+						<p>
+							Howdy, I'm in Section 2.
+						</p>
+					</div>
+				</div>
+			</div>
+		
+		
+        </div>
+</div>
+

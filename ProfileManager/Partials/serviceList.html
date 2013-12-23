@@ -1,0 +1,28 @@
+﻿<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Service URL
+                
+            </h3>
+        </div>
+        <div class="panel-body">
+            
+            <table class="table table-striped">
+				<tr>
+					<th>Folder</th>
+                    <th>Service Name</th>
+					<th>Map Service Type</th>
+				</tr>
+				<tr data-ng-repeat="mapService in mapServices" class="clickableRow">
+					<td>{{mapService.Folder}}</td>
+					<td>{{mapService.ServiceName}}</td>
+                    <td>{{mapService.ServiceType}}</td>
+				</tr>
+			</table>
+
+    </div>
+
+        </div>
+    </div>
+
+</div>
