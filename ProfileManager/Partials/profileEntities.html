@@ -1,0 +1,31 @@
+﻿<table class="table table-striped table-bordered">
+	<tr>
+		<th>Entity Name</th>
+	    <th>Map Service Layer ID</th>
+        <th>Show On Map</th>
+        <th>Create</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Read</th>
+	</tr>
+	<tr data-ng-repeat="profileEntity in profileEntities">
+		<td>{{profileEntity.JavaObjectName}}</td>
+        <td>{{profileEntity.MapServiceLayerId}}</td>
+	    <td>
+	        <input type="checkbox" value="Show On Map" ng-checked="profileEntity.ShowOnMap"/>
+	    </td>
+	    <td>
+	        <input type="checkbox" ng-checked="profileEntity.CanCreate"/>
+	    </td>
+	    <td>
+	        <input type="checkbox" ng-checked="profileEntity.CanDelete"/>
+	    </td>
+        <td>
+	        <input type="checkbox" ng-checked="profileEntity.CanUpdate"/>
+	    </td>
+<td>
+	        <input type="checkbox" ng-checked="profileEntity.CanRead"/>
+	    </td>
+
+	</tr>
+</table>

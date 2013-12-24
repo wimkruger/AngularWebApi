@@ -13,23 +13,46 @@ namespace ProfileManager.Controllers
     public class ServicesController : ApiController
     {
 
+        private readonly ITaskFactory<MapService, MapServiceDto> _factory;
+
+        public ServicesController(ITaskFactory<MapService, MapServiceDto> factory)
+        {
+            _factory = factory;
+        }
+        public ServicesController() : this(new TaskFactory<MapService, MapServiceDto>())
+        {
+            
+        }
+
         public IEnumerable<MapServiceDto> GetAllServices()
         {
-            using (TaskBase<MapService, MapServiceDto> _task = new TaskBase<MapService, MapServiceDto>())
+            using (var task = _factory.CreateTask())
             {
-                return _task.GetAll();
+                return task.GetAll();
             }
         }
 
         public IHttpActionResult GetService(int id)
         {
-            using (TaskBase<MapService, MapServiceDto> _task = new TaskBase<MapService, MapServiceDto>())
+            using (var task = _factory.CreateTask())
             {
-                var profile = _task.GetById(id);
-                if (profile == null)
+                var service = task.GetById(id);
+                if (service == null)
                     return NotFound();
-                return Ok(profile);
+                return Ok(service);
+            }
+            
+        }
+
+        [Route("api/services/{id}/layers")]
+        public IEnumerable<MapLayerDto> GetLayersByServiceId(int id)
+        {
+            using (var task = (ServiceTask)_factory.CreateTask())
+            {
+                var entities = task.GetRelatedLayers(id);
+                return entities;
             }
         }
+        
     }
 }

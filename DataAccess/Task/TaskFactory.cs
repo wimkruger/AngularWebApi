@@ -6,8 +6,15 @@ namespace DataAccess.Task
     {
         public ITask<T, TDto> CreateTask()
         {
+
             if (typeof (T) == typeof (Profile))
                 return new ProfileTask() as ITask<T, TDto>;
+            else
+            {
+                if (typeof (T) == typeof (MapService))
+                    return new ServiceTask() as ITask<T, TDto>;
+            }
+             
             return new TaskBase<T, TDto>();
         }
     }

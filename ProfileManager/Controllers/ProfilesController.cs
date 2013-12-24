@@ -16,7 +16,7 @@ namespace ProfileManager.Controllers
         {
         }
 
-        public ProfilesController(TaskFactory<Profile, ProfileDto> factory)
+        public ProfilesController(ITaskFactory<Profile, ProfileDto> factory)
         {
             _factory = factory;
         }
@@ -48,6 +48,26 @@ namespace ProfileManager.Controllers
             {
                 var services = task.GetRelatedServices(id);
                 return services;
+            }
+        }
+
+        [Route("api/profiles/{id}/adGroups")]
+        public IEnumerable<ActiveDirectoryGroupDto> GetActiveDirectoryGroupsByProfile(int id)
+        {
+            using (var task = (ProfileTask)_factory.CreateTask())
+            {
+                var services = task.GetRelatedActiveDirectoryGroups(id);
+                return services;
+            }
+        }
+
+        [Route("api/profiles/{id}/searchEntities")]
+        public IEnumerable<SearchEntityDto> GetSearchEntitiesByProfile(int id)
+        {
+            using (var task = (ProfileTask)_factory.CreateTask())
+            {
+                var entities = task.GetRelatedSearchEntities(id);
+                return entities;
             }
         }
     }

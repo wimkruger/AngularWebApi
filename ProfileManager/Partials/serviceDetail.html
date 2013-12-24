@@ -18,17 +18,86 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="serviceUrl">Service Url</label>
                     <div class="col-sm-10">
-                            <input id="serviceUrl" name="serviceUrl" type="text" class="form-control" ng-model="currentService.Url">
-                        </div>
+                        <input id="serviceUrl" name="serviceUrl" type="text" class="form-control" ng-model="currentService.Url">
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="serviceType">Service Type</label>
                     <div class="col-sm-10">
-                            <input id="serviceType" name="serviceType" type="text" class="form-control" ng-model="currentService.ServiceType">
-                        </div>
+                        <input id="serviceType" name="serviceType" type="text" class="form-control" ng-model="currentService.ServiceType">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="layerOrder">Layer Order</label>
+                    <div class="col-sm-10">
+                        <input id="layerOrder" name="layerOrder" type="text" class="form-control" ng-model="currentService.LayerOrder">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="minResolution">Minimum Resolution</label>
+                    <div class="col-sm-10">
+                        <input id="minResolution" name="minResolution" type="text" class="form-control" ng-model="currentService.MinimunResolution">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="maxResolution">Maximum Resolution</label>
+                    <div class="col-sm-10">
+                        <input id="maxResolution" name="maxResolution" type="text" class="form-control" ng-model="currentService.MaximumResolution">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="opacity">Opacity</label>
+                    <div class="col-sm-10">
+                        <input id="opacity" name="opacity" type="text" class="form-control" ng-model="currentService.Opacity">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="supportMap">Supports Map</label>
+                    <div class="col-sm-10">
+                        <input id="supportMap" name="supportMap" type="checkbox" class="form-control" ng-checked="currentService.SupportMapOperations">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="supportQuery">Supports Query</label>
+                    <div class="col-sm-10">
+                        <input id="supportQuery" name="supportQuery" type="checkbox" class="form-control" ng-checked="currentService.SupportQueryOperations">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="supportData">Supports Data</label>
+                    <div class="col-sm-10">
+                        <input id="supportData" name="supportData" type="checkbox" class="form-control" ng-checked="currentService.SupportDataOperations">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="visible">Visible by default</label>
+                    <div class="col-sm-10">
+                        <input id="visible" name="visible" type="checkbox" class="form-control" ng-checked="currentService.VisibleByDefault">
+                    </div>
                 </div>
             </form>
+            <br/>
+            <div class="tabbable" id="tabs-922694">
+            	    <ul class="nav nav-tabs">
+            	        <li ng-class="{ active: $state.includes('services.details.liveServer') }">
+            	            <a ui-sref="services.details.liveServer" data-toggle="tab">Live ArcGIS Server</a>
+            	        </li>
+                        <li ng-class="{ active: $state.includes('services.details.layers') }">
+            	            <a ui-sref="services.details.layers" data-toggle="tab">Map Layers</a>
+            	        </li>
+<!--            	         <li ng-class="{ active: $state.includes('services.details.liveServerParser') }">-->
+<!--            	            <a ui-sref="services.details.liveServerParser" data-toggle="tab">Live ArcGIS Server (Parser)</a>-->
+<!--            	        </li>-->
+            	        
+            	    </ul>
+            	    <div class="tab-pane active">
+            	        <div ui-view></div>
+                    </div>
+                </div>
         </div>
 </div>
 

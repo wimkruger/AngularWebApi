@@ -24,36 +24,21 @@
             </form>
             <br/>
             	<div class="tabbable" id="tabs-922694">
-				<ul class="nav nav-tabs">
-					<li class="active">
-						<a href="#panel-303428" data-toggle="tab">Map Services</a>
-					</li>
-					<li>
-						<a href="#panel-210508" data-toggle="tab">Active Directory</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="panel-303428">
-						<p>
-						    <table class="table table-striped">
-						        <tr>
-						            <th>Url</th>
-						            <th>Map Service Type</th>
-						        </tr>
-						        <tr data-ng-repeat="mapService in mapServices">
-						            <td>{{mapService.Url}}</td>
-                                    <td>{{mapService.ServiceType}}</td>
-						        </tr>
-						    </table>
-						</p>
-					</div>
-					<div class="tab-pane" id="panel-210508">
-						<p>
-							Howdy, I'm in Section 2.
-						</p>
-					</div>
-				</div>
-			</div>
+            	    <ul class="nav nav-tabs">
+            	        <li ng-class="{ active: $state.includes('profiles.details.mapServices') }">
+            	            <a ui-sref="profiles.details.mapServices" data-toggle="tab">Map Services</a>
+            	        </li>
+            	        <li ng-class="{ active: $state.includes('profiles.details.ad') }">
+            	            <a ui-sref="profiles.details.ad" data-toggle="tab">Active Directory</a>
+            	        </li>
+                        <li ng-class="{ active: $state.includes('profiles.details.entities') }">
+            	            <a ui-sref="profiles.details.entities" data-toggle="tab">Java Entities</a>
+            	        </li>
+            	    </ul>
+            	    <div class="tab-pane active">
+            	        <div ui-view></div>
+                    </div>
+                </div>
 		
 		
         </div>

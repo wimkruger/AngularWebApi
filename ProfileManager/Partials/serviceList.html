@@ -9,14 +9,16 @@
             
             <table class="table table-striped">
 				<tr>
-					<th>Folder</th>
                     <th>Service Name</th>
-					<th>Map Service Type</th>
+					<th>Folder</th>
 				</tr>
-				<tr data-ng-repeat="mapService in mapServices" class="clickableRow">
+				<tr data-ng-repeat="mapService in mapServices">
+				    <td>
+				        <a ui-sref="services.details.liveServer({serviceId:mapService.Id})" >
+				        {{mapService.ServiceName}}
+                            </a>
+				    </td>
 					<td>{{mapService.Folder}}</td>
-					<td>{{mapService.ServiceName}}</td>
-                    <td>{{mapService.ServiceType}}</td>
 				</tr>
 			</table>
 

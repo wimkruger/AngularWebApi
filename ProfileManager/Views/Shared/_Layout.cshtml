@@ -2,9 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    
     
 </head>
 <body data-ng-app="metadataManager">
@@ -17,8 +19,8 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li ng-class="{ active: $state.includes('profiles') }"><a ui-sref="profiles"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Profiles</a></li>
-						<li ng-class="{ active: $state.includes('services') }"><a ui-sref="services"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;Map Services</a></li>
+						<li ng-class="{ active: $state.includes('profiles') }"><a ui-sref="profiles.list"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Profiles</a></li>
+						<li ng-class="{ active: $state.includes('services') }"><a ui-sref="services.list"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;Map Services</a></li>
 					</ul>
 				</div>
 			</div>

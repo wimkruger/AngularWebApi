@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveDirectoryGroup.cs" />
     <Compile Include="AuditableEntity.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="MapLayer.cs" />
     <Compile Include="MapService.cs" />
     <Compile Include="MapServiceType.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
