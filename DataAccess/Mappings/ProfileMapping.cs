@@ -2,13 +2,11 @@
 using FluentNHibernate.Mapping;
 namespace DataAccess.Mappings
 {
-    public class ProfileMapping : ClassMap<Profile>
+    public class ProfileMapping : EntityMapping<Profile>
     {
-        public ProfileMapping()
+        public ProfileMapping() : base()
         {
-            Schema("PROFILEDATA");
             Table("PROFILE");
-            Id(x => x.Id, "OBJECT_ID");//.GeneratedBy.Custom<OrionIdGenerator>(p => p.AddParam("classnamekey", LastUsedIdClassName.Profile.ToString()));
             Map(x => x.Name, "PROFILE_NAME");
             Map(x => x.Sequence, "SEQUENCE_NO");
             Map(x => x.Description, "DESCR");

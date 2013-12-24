@@ -3,13 +3,11 @@ using FluentNHibernate.Mapping;
 
 namespace DataAccess.Mappings
 {
-    public class MapLayerMapping : ClassMap<MapLayer>
+    public class MapLayerMapping : EntityMapping<MapLayer>
     {
-         public MapLayerMapping()
+         public MapLayerMapping() : base()
          {
-             Schema("PROFILEDATA");
              Table("MAP_LAYER");
-             Id(x => x.Id, "OBJECT_ID");
              Map(x => x.DisableClientCache, "FEAT_DISABLE_CLIENT_CACHE");
              Map(x => x.FeatureClusteredBackgroundSymbol, "FEAT_CLUSTER_BG_COLOR");
              Map(x => x.FeatureClusteredEnabled, "FEAT_ENABLE_CLUSTERER");

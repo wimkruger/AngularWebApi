@@ -3,13 +3,11 @@ using Domain;
 using FluentNHibernate.Mapping;
 namespace DataAccess.Mappings
 {
-    public class MapServiceMapping : ClassMap<MapService>
+    public class MapServiceMapping : EntityMapping<MapService>
     {
-        public MapServiceMapping()
+        public MapServiceMapping() : base()
         {
-            Schema("PROFILEDATA");
             Table("MAP_SERVICE");
-            Id(x => x.Id, "OBJECT_ID");
             Map(x => x.Name, "SERVICE_NAME");
             Map(x => x.LayerOrder, "LAYER_ORDER");
             Map(x => x.MaximumResolution, "MAX_RESOLUTION");

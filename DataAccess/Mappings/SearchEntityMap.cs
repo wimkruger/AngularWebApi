@@ -3,13 +3,11 @@ using FluentNHibernate.Mapping;
 
 namespace DataAccess.Mappings
 {
-    public class SearchEntityMap : ClassMap<SearchEntity>
+    public class SearchEntityMap : EntityMapping<SearchEntity>
     {
          public SearchEntityMap() : base()
          {
-             Schema("PROFILEDATA");
              Table("PROFILE_CONFIG");
-             Id(x => x.Id, "OBJECT_ID");
              Map(x => x.JavaObjectName, "APP_OBJ_NAME_VALUE");
              Map(x => x.MapServiceLayerId, "MAP_FEATURE_DISPLAY_ID");
              Map(x => x.ShowOnMap, "SHOW_ON_MAP").CustomType("YesNo");

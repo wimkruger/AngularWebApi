@@ -67,6 +67,7 @@
     <Compile Include="Mappings\ActiveDirectoryGroupMap.cs" />
     <Compile Include="Mappings\AuditableBusinessEntityMap.cs" />
     <Compile Include="Mappings\AuditableEntityMap.cs" />
+    <Compile Include="Mappings\EntityMapping.cs" />
     <Compile Include="Mappings\MapLayerMapping.cs" />
     <Compile Include="Mappings\MapServiceMapping.cs" />
     <Compile Include="Mappings\ProfileMapping.cs" />
