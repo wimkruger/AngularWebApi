@@ -187,10 +187,10 @@
     <Content Include="Partials\serviceDetail.html" />
     <Content Include="Partials\serviceList.html" />
     <Content Include="Scripts\angular_ui_router.js" />
+    <Content Include="Scripts\controllers.js" />
+    <Content Include="Scripts\dataProviders.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\profileModule.js" />
     <Content Include="Scripts\StateMachine.js" />
-    <Content Include="Scripts\testme1.js" />
     <Content Include="testme.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
