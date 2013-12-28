@@ -1,36 +1,17 @@
-﻿<table class="table table-striped table-bordered">
-	<tr>
-		<th>Layer Name</th>
-	    <th>Layer ID</th>
-        <th>Visible</th>
-        <th>Order</th>
-        <th>Opacity</th>
-        <th>Min Resolution</th>
-	    <th>Max Resolution</th>
-	    <td>Is Feature Layer</td>
-        <td>Where Clause</td>
-        <td>Java Object Name</td>
-        <td>Map ID Field</td>
-        <td>Map Display Field</td>
-        <td>Feature Renderer</td>
-        <td>Feature Clustered</td>
-	</tr>
-	<tr data-ng-repeat="serviceLayer in serviceLayers">
-		<td>{{serviceLayer.Name}}</td>
-        <td>{{serviceLayer.LayerId}}</td>
-	    <td>
-	        <input type="checkbox" value="Visible By Default" ng-checked="serviceLayer.VisibleByDefault"/>
-	    </td>
-        <td>{{serviceLayer.LayerOrder}}</td>
-        <td>{{serviceLayer.Opacity}}</td>
-        <td>{{serviceLayer.MinimumResolution}}</td>
-        <td>{{serviceLayer.MaximumResoultuion}}</td>
-	    <td><input type="checkbox" value="Is Feature Layer" ng-checked="serviceLayer.IsFeatureLayer"/></td>
-        <td>{{serviceLayer.FeatureWhereClause}}</td>
-        <td>{{serviceLayer.JavaObjectName}}</td>
-        <td>{{serviceLayer.MapKeyFieldName}}</td>
-        <td>{{serviceLayer.MapDisplayFieldName}}</td>
-	    <td>{{serviceLayer.FeatureRenderer}}</td>
-        <td><input type="checkbox" value="Feature Clustered" ng-checked="serviceLayer.FeatureClusteredEnabled"/></td>
-	</tr>
-</table>
+﻿<div class="col-sm-3">
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Layer Name</th>
+        </tr>
+        <tr data-ng-repeat="serviceLayer in serviceLayers">
+            <td>
+                <a ui-sref="services.details.layers.details({layerId:serviceLayer.Id})" >
+                {{serviceLayer.Name}}
+                    </a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="col-sm-9">
+    <div ui-view></div>
+</div>

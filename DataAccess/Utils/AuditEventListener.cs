@@ -12,8 +12,11 @@ namespace DataAccess.Utils
             if (audit == null)
                 return false;
             var date = SystemTime.Now();
+            var user = Environment.UserName;
             Set(@event.Persister, @event.State, "ModifiedDate", date);
+            Set(@event.Persister, @event.State, "ModifiedUser", user);
             audit.ModifiedDate = date;
+            audit.ModifiedUser = user;
             return false;
         }
 
@@ -23,8 +26,11 @@ namespace DataAccess.Utils
             if (audit == null)
                 return false;
             var date = SystemTime.Now();
+            var user = Environment.UserName;
             Set(@event.Persister, @event.State, "ModifiedDate", date);
+            Set(@event.Persister, @event.State, "ModifiedUser", user);
             audit.ModifiedDate = date;
+            audit.ModifiedUser = user;
             return false;
         }
 

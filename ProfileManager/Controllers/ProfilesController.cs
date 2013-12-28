@@ -41,6 +41,15 @@ namespace ProfileManager.Controllers
             }
         }
 
+        public bool Put(ProfileDto profile)
+        {
+            using (var task = (ProfileTask) _factory.CreateTask())
+            {
+                var result = task.Update(profile);
+                return (result);
+            }
+        }
+
         [Route("api/profiles/{id}/mapServices")]
         public IEnumerable<MapServiceDto> GetMapServicesByProfile(int id)
         {
@@ -62,11 +71,22 @@ namespace ProfileManager.Controllers
         }
 
         [Route("api/profiles/{id}/searchEntities")]
-        public IEnumerable<SearchEntityDto> GetSearchEntitiesByProfile(int id)
+        public IEnumerable<PermissionDto> GetSearchEntitiesByProfile(int id)
         {
             using (var task = (ProfileTask)_factory.CreateTask())
             {
                 var entities = task.GetRelatedSearchEntities(id);
+                return entities;
+            }
+        }
+
+        [Route("api/profiles/{id}/searchEntities")]
+        [AcceptVerbs("PUT")]
+        public bool PutSearchEntitiesByProfile(PermissionDto dto)
+        {
+            using (var task = (ProfileTask)_factory.CreateTask())
+            {
+                var entities = task.Update(dto);
                 return entities;
             }
         }

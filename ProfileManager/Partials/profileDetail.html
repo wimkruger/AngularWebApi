@@ -21,26 +21,24 @@
                         <input id="profileDesc" name="profileDesc" type="text" class="form-control" ng-model="currentProfile.Description">
                     </div>
                 </div>
+                <button type="button" class="btn btn-primary pull-right col-sm-2" ng-click="save()">Save</button>
             </form>
-            <br/>
-            	<div class="tabbable" id="tabs-922694">
-            	    <ul class="nav nav-tabs">
-            	        <li ng-class="{ active: $state.includes('profiles.details.mapServices') }">
-            	            <a ui-sref="profiles.details.mapServices" data-toggle="tab">Map Services</a>
-            	        </li>
-            	        <li ng-class="{ active: $state.includes('profiles.details.ad') }">
-            	            <a ui-sref="profiles.details.ad" data-toggle="tab">Active Directory</a>
-            	        </li>
-                        <li ng-class="{ active: $state.includes('profiles.details.entities') }">
-            	            <a ui-sref="profiles.details.entities" data-toggle="tab">Java Entities</a>
-            	        </li>
-            	    </ul>
-            	    <div class="tab-pane active">
-            	        <div ui-view></div>
-                    </div>
-                </div>
-		
-		
         </div>
 </div>
-
+<br/>
+<div class="tabbable" id="tabs-922694">
+    <ul class="nav nav-tabs">
+        <li ng-class="{ active: $state.includes('profiles.details.mapServices') }">
+            <a ui-sref="profiles.details.mapServices" data-toggle="tab">Map Services</a>
+        </li>
+        <li ng-class="{ active: $state.includes('profiles.details.ad') }">
+            <a ui-sref="profiles.details.ad" data-toggle="tab">Active Directory</a>
+        </li>
+        <li ng-class="{ active: $state.includes('profiles.details.entities') }">
+            <a ui-sref="profiles.details.entities" data-toggle="tab">Permissions</a>
+        </li>
+    </ul>
+    <div class="tab-pane active">
+        <div ui-view></div>
+    </div>
+</div>

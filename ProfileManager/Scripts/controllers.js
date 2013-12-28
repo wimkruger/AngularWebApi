@@ -27,6 +27,12 @@ metadataManager.controller('profileDetailController', function ($scope, $statePa
         $scope.currentProfile = profileFactory.get({ Id: $stateParams.profileId });
     }
 
+    function save() {
+        var ss = profileFactory.update($scope.currentProfile);
+    }
+
+    $scope.save = save;
+
     init();
 });
 
@@ -58,6 +64,12 @@ metadataManager.controller('profileEntitiesController', function ($scope, $state
         $scope.profileEntities = profileEntitiesFactory.query({ Id: $stateParams.profileId });
     }
 
+    function save(id) {
+        var result = jQuery.grep($scope.profileEntities, function (e) { return e.Id == id; })[0];
+        deleteData = profileEntitiesFactory.update(result);
+    }
+
+    $scope.save = save;
     init();
 });
 
@@ -91,6 +103,16 @@ metadataManager.controller('serviceDetailArcgisController', function ($scope, $s
 
 
 metadataManager.controller('serviceDetailLayersController', function ($scope, $stateParams, serviceLayerFactory) {
+    $scope.serviceLayers = [];
+    function init() {
+        $scope.serviceLayers = serviceLayerFactory.query({ Id: $stateParams.serviceId });
+    }
+
+    init();
+});
+
+
+metadataManager.controller('serviceDetailLayersDetailsController', function ($scope, $stateParams, serviceLayerFactory) {
     $scope.serviceLayers = [];
     function init() {
         $scope.serviceLayers = serviceLayerFactory.query({ Id: $stateParams.serviceId });

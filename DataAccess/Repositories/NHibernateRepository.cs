@@ -16,7 +16,7 @@ namespace DataAccess.Repositories
 
         public void Add(T item)
         {
-            Transact(() => Session.Save(item));
+            Transact(() => Session.SaveOrUpdate(item));
         }
         
         public bool Contains(T item)

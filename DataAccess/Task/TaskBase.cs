@@ -30,6 +30,7 @@ namespace DataAccess.Task
         public virtual void CreateMapping()
         {
             Mapper.CreateMap<T, TDto>();
+            Mapper.CreateMap<TDto, T>();
         }
 
         public IEnumerable<TDto> GetAll()
@@ -49,6 +50,23 @@ namespace DataAccess.Task
             var data = this.Repository.FindById(id);
             var dataDto = Mapper.Map<TDto>(data);
             return dataDto;
+        }
+
+        public virtual TDto Add(TDto item)
+        {
+            var data = Mapper.Map<T>(item);
+            this.Repository.Add(data);
+            var backDto = Mapper.Map<TDto>( data);
+            return backDto;
+        }
+
+        public virtual bool Update(TDto item)
+        {
+            var data = Mapper.Map<T>(item);
+            if (!this.Repository.Contains(data))
+                return false;
+            this.Repository.Add(data);
+            return true;
         }
 
         #region disposable

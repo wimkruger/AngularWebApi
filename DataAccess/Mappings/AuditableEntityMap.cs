@@ -2,11 +2,12 @@
 using FluentNHibernate.Mapping;
 namespace DataAccess.Mappings
 {
-    public class AuditableEntityMap<T> : ClassMap<T> where T : AuditableEntity
+    public class AuditableEntityMap<T> : EntityMapping<T> where T : AuditableEntity
     {
         public AuditableEntityMap()
         {
-            Map(x => x.ModifiedDate);
+            Map(x => x.ModifiedDate, "AUDIT_DATE");
+            Map(x => x.ModifiedUser, "AUDIT_USER_ID");
         }
     }
 }

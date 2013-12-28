@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper">
-      <HintPath>..\ProfileManager\bin\AutoMapper.dll</HintPath>
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
@@ -62,16 +62,16 @@
     <Compile Include="Dtos\ActiveDirectoryGroupDto.cs" />
     <Compile Include="Dtos\mapLayerDto.cs" />
     <Compile Include="Dtos\MapServiceDto.cs" />
+    <Compile Include="Dtos\PermissionDto.cs" />
     <Compile Include="Dtos\ProfileDto.cs" />
-    <Compile Include="Dtos\SearchEntityDto.cs" />
     <Compile Include="Mappings\ActiveDirectoryGroupMap.cs" />
     <Compile Include="Mappings\AuditableBusinessEntityMap.cs" />
     <Compile Include="Mappings\AuditableEntityMap.cs" />
     <Compile Include="Mappings\EntityMapping.cs" />
     <Compile Include="Mappings\MapLayerMapping.cs" />
     <Compile Include="Mappings\MapServiceMapping.cs" />
+    <Compile Include="Mappings\PermissionMap.cs" />
     <Compile Include="Mappings\ProfileMapping.cs" />
-    <Compile Include="Mappings\SearchEntityMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IReporsitoryFactory.cs" />
     <Compile Include="Repositories\IRepository.cs" />

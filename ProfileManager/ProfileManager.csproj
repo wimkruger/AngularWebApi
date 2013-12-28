@@ -182,10 +182,18 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Partials\Profile.html" />
+    <Content Include="Partials\profileAdGroups.html" />
     <Content Include="Partials\profileDetail.html" />
+    <Content Include="Partials\profilePermissions.html" />
     <Content Include="Partials\profileList.html" />
+    <Content Include="Partials\profileMapServices.html" />
+    <Content Include="Partials\serviceArcgisServer.html" />
+    <Content Include="Partials\serviceArcgisServerParser.html" />
     <Content Include="Partials\serviceDetail.html" />
+    <Content Include="Partials\serviceLayerDetails.html" />
+    <Content Include="Partials\serviceLayers.html" />
     <Content Include="Partials\serviceList.html" />
+    <Content Include="Partials\services.html" />
     <Content Include="Scripts\angular_ui_router.js" />
     <Content Include="Scripts\controllers.js" />
     <Content Include="Scripts\dataProviders.js" />
@@ -253,12 +261,12 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>50449</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:18133/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
+          <NTLMAuthentication>True</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
           </CustomServerUrl>

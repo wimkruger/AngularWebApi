@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoMapper;
 using DataAccess.Dtos;
+using DataAccess.Repositories;
 using Domain;
 using Profile = Domain.Profile;
 
@@ -14,7 +15,8 @@ namespace DataAccess.Task
             base.CreateMapping();
             Mapper.CreateMap<MapService, MapServiceDto>();
             Mapper.CreateMap<ActiveDirectoryGroup, ActiveDirectoryGroupDto>();
-            Mapper.CreateMap<SearchEntity, SearchEntityDto>();
+            Mapper.CreateMap<Permission, PermissionDto>();
+            Mapper.CreateMap<PermissionDto, Permission>();
         }
 
         public IEnumerable<MapServiceDto> GetRelatedServices(int profileId)
@@ -33,12 +35,32 @@ namespace DataAccess.Task
             return adGroupDtos;
         }
 
-        public IEnumerable<SearchEntityDto> GetRelatedSearchEntities(int profileId)
+        public IEnumerable<PermissionDto> GetRelatedSearchEntities(int profileId)
         {
             var profile = this.Repository.FindById(profileId);
-            var searchEntities = profile.SearchEntities.ToList();
-            var entitiesDto = searchEntities.Select(Mapper.Map<SearchEntityDto>);
+            var searchEntities = profile.Permissions.ToList();
+            var entitiesDto = searchEntities.Select(Mapper.Map<PermissionDto>);
             return entitiesDto;
+        }
+
+        public override bool Update(ProfileDto item)
+        {
+            var trans = Session.BeginTransaction();
+            var profile = Repository.FindById(item.Id);
+            profile.Name = item.Name;
+            profile.Description = item.Description;
+            profile.Sequence = item.Sequence;
+            Repository.Add(profile);
+            trans.Commit();
+            return true;
+        }
+
+        public bool Update(PermissionDto dto)
+        {
+            var repo = new NHibernateRepository<Permission>(Session);
+            var permission = Mapper.Map<Permission>(dto);
+            repo.Add(permission);
+            return true;
         }
 
     }

@@ -5,7 +5,6 @@ C:\Projects\Pipes\ProfileManagerSolution\Domain\obj\Debug\Domain.dll
 C:\Projects\Pipes\ProfileManagerSolution\Domain\obj\Debug\Domain.pdb
 C:\Projects\ProfileManagerSolution\Domain\bin\Debug\Domain.dll
 C:\Projects\ProfileManagerSolution\Domain\bin\Debug\Domain.pdb
-C:\Projects\ProfileManagerSolution\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Projects\ProfileManagerSolution\Domain\obj\Debug\Domain.dll
 C:\Projects\ProfileManagerSolution\Domain\obj\Debug\Domain.pdb
 C:\Projects\AngularWebApi\AngularWebApi-master\Domain\bin\Debug\Domain.dll
@@ -13,3 +12,4 @@ C:\Projects\AngularWebApi\AngularWebApi-master\Domain\bin\Debug\Domain.pdb
 C:\Projects\AngularWebApi\AngularWebApi-master\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Projects\AngularWebApi\AngularWebApi-master\Domain\obj\Debug\Domain.dll
 C:\Projects\AngularWebApi\AngularWebApi-master\Domain\obj\Debug\Domain.pdb
+C:\Projects\ProfileManagerSolution\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

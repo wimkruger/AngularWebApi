@@ -4,39 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Test Me</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jqgrid/4.5.2/css/ui.jqgrid.css" />
     
 </head>
-<body ng-app="myApp">
-
-	<nav class="navbar-wrapper navbar-default" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<span class="navbar-brand">GeoFind Profile Manager</span>
-			</div>
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li ><a ui-sref="profiles"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Profiles</a></li>
-						<li ><a ui-sref="services"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;Map Services</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-    <br /><br />
-    <div class="container">
-        testme
-        <div ui-view></div>
-    </div>
-
-    <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-resource.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.js"></script>
-    <script src="Scripts/angular_ui.js"></script>
-    <script src="Scripts/testme1.js"></script>
+<body>
+    <table id="gridTable"></table>
     
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jqgrid/4.5.2/jquery.jqGrid.js"></script>
+    
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('#gridTable').jqGrid({
+                url: 'http://localhost:50449/api/profiles/2/searchEntities',
+                datatype: 'json',
+                colNames: ['Entity', 'Create', 'Read', 'Update', 'Delete', 'Show on map'],
+                colModel: [
+                    {name: 'JavaObjectName', index: 'JavaObjectName', width: 100},
+                    { name: 'CanCreate', index: 'CanCreate', width: 50},
+                    { name: 'CanRead', index: 'CanRead', width: 50 },
+                    { name: 'CanUpdate', index: 'CanUpdate', width: 50 },
+                    { name: 'CanDelete', index: 'CanDelete', width: 50 },
+                    { name: 'ShowOnMap', index: 'ShowOnMap', width: 50 }
+                ],
+                jsonReader: {repeatitems: false, root: function (obj) { return obj; }}
+            });
+        });
+    </script>
 </body>
 </html>
