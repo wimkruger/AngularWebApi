@@ -112,10 +112,11 @@ metadataManager.controller('serviceDetailLayersController', function ($scope, $s
 });
 
 
-metadataManager.controller('serviceDetailLayersDetailsController', function ($scope, $stateParams, serviceLayerFactory) {
-    $scope.serviceLayers = [];
+metadataManager.controller('serviceDetailLayersDetailsController', function ($scope, $stateParams, serviceLayerDetailFactory) {
+    $scope.currentLayer = {};
+
     function init() {
-        $scope.serviceLayers = serviceLayerFactory.query({ Id: $stateParams.serviceId });
+        $scope.currentLayer = serviceLayerDetailFactory.get({ Id: $stateParams.layerId });
     }
 
     init();

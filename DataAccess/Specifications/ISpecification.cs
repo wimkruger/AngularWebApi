@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using AdventureWorks.DataAccess.SearchCriterias;
-using NHibernate;
-namespace AdventureWorks.DataAccess.Specifications
+
+namespace DataAccess.Specifications
 {
     public interface ISpecification<T>
     {

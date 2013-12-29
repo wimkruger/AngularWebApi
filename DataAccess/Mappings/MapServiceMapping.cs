@@ -5,7 +5,7 @@ namespace DataAccess.Mappings
 {
     public class MapServiceMapping : EntityMapping<MapService>
     {
-        public MapServiceMapping() : base()
+        public MapServiceMapping() :base()
         {
             Table("MAP_SERVICE");
             Map(x => x.Name, "SERVICE_NAME");
@@ -19,8 +19,6 @@ namespace DataAccess.Mappings
             Map(x => x.SupportQueryOperations, "SUPPORTS_QUERY");
             Map(x => x.SupportDataOperations, "SUPPORTS_DATA");
             Map(x => x.VisibleByDefault, "VISIBLE_BY_DEFAULT");
-
-            HasMany<MapLayer>(x => x.MapLayers).KeyColumn("MAP_SERVICE_ID").LazyLoad();
         }
     }
 }

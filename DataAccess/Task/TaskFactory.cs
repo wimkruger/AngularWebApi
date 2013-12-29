@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using DataAccess.Dtos;
+using Domain;
 
 namespace DataAccess.Task
 {
@@ -9,12 +10,6 @@ namespace DataAccess.Task
 
             if (typeof (T) == typeof (Profile))
                 return new ProfileTask() as ITask<T, TDto>;
-            else
-            {
-                if (typeof (T) == typeof (MapService))
-                    return new ServiceTask() as ITask<T, TDto>;
-            }
-             
             return new TaskBase<T, TDto>();
         }
     }

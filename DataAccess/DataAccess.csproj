@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDto.cs" />
+    <Compile Include="Dtos\BaseDto.cs" />
     <Compile Include="Dtos\ActiveDirectoryGroupDto.cs" />
     <Compile Include="Dtos\mapLayerDto.cs" />
     <Compile Include="Dtos\MapServiceDto.cs" />
@@ -78,10 +78,11 @@
     <Compile Include="Repositories\NHibernateRepository.cs" />
     <Compile Include="Repositories\RepositoryFactory.cs" />
     <Compile Include="Repositories\TransactionBase.cs" />
+    <Compile Include="Specifications\ISpecification.cs" />
+    <Compile Include="Specifications\MapLayerByMapServiceIdSepcification.cs" />
     <Compile Include="Task\ITask.cs" />
     <Compile Include="Task\ITaskFactory.cs" />
     <Compile Include="Task\ProfileTask.cs" />
-    <Compile Include="Task\ServiceTask.cs" />
     <Compile Include="Task\TaskBase.cs" />
     <Compile Include="Task\TaskFactory.cs" />
     <Compile Include="Utils\AuditEventListener.cs" />

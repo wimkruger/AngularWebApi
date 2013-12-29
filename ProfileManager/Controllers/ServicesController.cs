@@ -44,15 +44,21 @@ namespace ProfileManager.Controllers
             
         }
 
-        [Route("api/services/{id}/layers")]
-        public IEnumerable<MapLayerDto> GetLayersByServiceId(int id)
+        public bool PutService(MapServiceDto mapService)
         {
-            using (var task = (ServiceTask)_factory.CreateTask())
+            using (var task = _factory.CreateTask())
             {
-                var entities = task.GetRelatedLayers(id);
-                return entities;
+                return task.Update(mapService);
             }
         }
-        
+
+
+        [Route("api/services/{id}/layers")]
+        public IEnumerable<MapLayerDto> GetRelatedLayers(int id)
+        {
+            var layerController = new MapLayerController();
+            return layerController.GetLayersByMapService(id);
+        }
+
     }
 }

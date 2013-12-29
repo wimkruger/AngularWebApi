@@ -23,3 +23,7 @@ metadataManager.service('profileEntitiesFactory', function ($resource) {
 metadataManager.service('serviceLayerFactory', function ($resource) {
     return $resource("api/services/:Id/layers", { Id: "@Id" }, { "update": { method: "PUT" } });
 });
+
+metadataManager.service('serviceLayerDetailFactory', function($resource) {
+    return $resource("api/maplayer/:Id", { Id: "@Id" }, { "update": { method: "PUT" } });
+});

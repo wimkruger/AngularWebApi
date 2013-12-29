@@ -5,6 +5,7 @@
         public string Name { get; set; }
         public int LayerId { get; set; }
         public int LayerOrder { get; set; }
+        public int MapServiceId { get; set; }
         public bool VisibleByDefault { get; set; }
         public decimal? MinimumResolution { get; set; }
         public decimal? MaximumResoultuion { get; set; }

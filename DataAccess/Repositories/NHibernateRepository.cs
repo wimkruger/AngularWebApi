@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using DataAccess.Specifications;
+using Domain;
 using NHibernate;
 using NHibernate.Linq;
 using System.Linq;
@@ -14,9 +15,24 @@ namespace DataAccess.Repositories
         {
         }
 
-        public void Add(T item)
+        public T Add(T item)
         {
-            Transact(() => Session.SaveOrUpdate(item));
+            Transact(() => Session.Save(item));
+            return item;
+        }
+
+        public bool Update(T item)
+        {
+            bool result = true;
+            Transact(() =>
+                {
+                    var db = Session.Get<T>(item.Id);
+                    if (db == null)
+                        result = false;
+                    Session.Update(item);
+                    result = true;
+                });
+            return result;
         }
         
         public bool Contains(T item)
@@ -55,12 +71,12 @@ namespace DataAccess.Repositories
             return Transact(() => Session.Get<T>(id));
         }
 
-        /*public IQueryable<T> Find(ISpecification<T> specification)
+        public IQueryable<T> Find(ISpecification<T> specification)
         {
-            var query = session.Query<T>();
+            var query = Session.Query<T>();
             return Transact(() =>
                 specification.IsSatisfiedBy(query));
-        }*/
+        }
 
         //public PagedResult<T> Search<TCriteria>(TCriteria criteria)
         //{

@@ -1,1 +1,69 @@
-﻿service layer details
+﻿Service Layer Details: <br/>
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="layerName">Name</label>
+    <div class="col-sm-10">
+        <input id="layerName" name="layerName" type="text" class="form-control" ng-model="currentLayer.Name">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="layerId">Layer ID</label>
+    <div class="col-sm-10">
+        <input id="layerId" name="layerId" type="text" class="form-control" ng-model="currentLayer.LayerId">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="layerOrder">Layer Order</label>
+    <div class="col-sm-10">
+        <input id="layerOrder" name="layerOrder" type="text" class="form-control" ng-model="currentLayer.LayerOrder">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="minRes">Min Res.</label>
+    <div class="col-sm-10">
+        <input id="minRes" name="minRes" type="text" class="form-control" ng-model="currentLayer.MinimumResolution">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="maxRes">Max Res.</label>
+    <div class="col-sm-10">
+        <input id="maxRes" name="maxRes" type="text" class="form-control" ng-model="currentLayer.MaximumResoultuion">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="opacity">Opacity</label>
+    <div class="col-sm-10">
+        <input id="opacity" name="opacity" type="text" class="form-control" ng-model="currentLayer.Opacity">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="visible">Visible</label>
+    <div class="col-sm-10">
+        <input id="visible" name="visible" type="checkbox" class="form-control" ng-checked="currentService.VisibleByDefault">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="isFeature">Is Feature</label>
+    <div class="col-sm-10">
+        <input id="isFeature" name="isFeature" type="checkbox" class="form-control" ng-checked="currentService.IsFeatureLayer">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="where">Where clause</label>
+    <div class="col-sm-10">
+        <input id="where" name="where" type="text" class="form-control" ng-model="currentLayer.FeatureWhereClause">
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="javaObj">Java Class</label>
+    <div class="col-sm-10">
+        <input id="javaObj" name="javaObj" type="text" class="form-control" ng-model="currentLayer.JavaObjectName">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="mapKey">Map Key Name</label>
+    <div class="col-sm-10">
+        <input id="mapKey" name="mapKey" type="text" class="form-control" ng-model="currentLayer.MapKeyFieldName">
+    </div>
+</div>

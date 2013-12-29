@@ -12,6 +12,7 @@ namespace DataAccess.Mappings
              Map(x => x.FeatureClusteredBackgroundSymbol, "FEAT_CLUSTER_BG_COLOR");
              Map(x => x.FeatureClusteredEnabled, "FEAT_ENABLE_CLUSTERER");
              Map(x => x.FeatureClusteredForegroundSymbol, "FEAT_CLUSTER_FG_COLOR");
+             Map(x => x.MapServiceId, "MAP_SERVICE_ID");
              Map(x => x.FeatureRenderer, "FEAT_RENDERER");
              Map(x => x.FeatureWhereClause, "FEAT_WHERE_CLAUSE");
              Map(x => x.IsFeatureLayer, "FEAT_LAYER_ENABLED");

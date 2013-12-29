@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using DataAccess.Dtos;
+using Domain;
 
 namespace DataAccess.Task
 {

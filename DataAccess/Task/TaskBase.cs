@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using AutoMapper;
+using DataAccess.Dtos;
+using DataAccess.Specifications;
 using NHibernate;
 using DataAccess.Utils;
 using System;
@@ -27,13 +29,13 @@ namespace DataAccess.Task
 
         public TaskBase() : this(new RepositoryFactory<T>(), SessionManager.SessionFactory) { }
 
-        public virtual void CreateMapping()
+        public  virtual  void CreateMapping()
         {
             Mapper.CreateMap<T, TDto>();
             Mapper.CreateMap<TDto, T>();
         }
 
-        public IEnumerable<TDto> GetAll()
+        public virtual IEnumerable<TDto> GetAll()
         {
             var values = this.Repository.GetEnumerator();
             var list = new List<T>();
@@ -67,6 +69,12 @@ namespace DataAccess.Task
                 return false;
             this.Repository.Add(data);
             return true;
+        }
+
+        public IEnumerable<TDto> FindByCriteria(ISpecification<T> spec)
+        {
+            var values = this.Repository.Find(spec).ToList();
+            return  values.Select(Mapper.Map<TDto>);
         }
 
         #region disposable

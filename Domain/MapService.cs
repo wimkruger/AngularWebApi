@@ -18,7 +18,5 @@ namespace Domain
         public virtual bool SupportQueryOperations { get; set; }
         public virtual bool SupportDataOperations { get; set; }
         public virtual bool VisibleByDefault { get; set; }
-
-        public virtual IList<MapLayer> MapLayers { get; set; }
     }
 }
