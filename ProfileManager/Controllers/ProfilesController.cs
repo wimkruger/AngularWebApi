@@ -76,7 +76,7 @@ namespace ProfileManager.Controllers
         {
             using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
-                var entities = task.Update(dto);
+                var entities = task.UpdatePermission(dto);
                 return entities;
             }
         }

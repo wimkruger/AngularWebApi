@@ -4,12 +4,19 @@ using AutoMapper;
 using DataAccess.Dtos;
 using DataAccess.Repositories;
 using Domain;
+using NHibernate;
 using Profile = Domain.Profile;
 
 namespace DataAccess.Task
 {
     public class ProfileTask : TaskBase<Profile, ProfileDto>, ITask<Profile, ProfileDto>
     {
+        public ProfileTask(IReporsitoryFactory<Profile> repositoryFactory, ISessionFactory sessionFactory)
+            : base(repositoryFactory, sessionFactory)
+        {
+            
+        }
+
         public override void CreateMapping()
         {
             base.CreateMapping();
@@ -55,7 +62,7 @@ namespace DataAccess.Task
             return true;
         }
 
-        public bool Update(PermissionDto dto)
+        public bool UpdatePermission(PermissionDto dto)
         {
             var repo = new NHibernateRepository<Permission>(Session);
             var permission = Mapper.Map<Permission>(dto);

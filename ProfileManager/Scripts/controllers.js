@@ -78,7 +78,12 @@ metadataManager.controller('serviceDetailController', function ($scope, $statePa
     function init() {
         $scope.currentService = mapServiceFactory.get({ Id: $stateParams.serviceId });
     }
+    
+    function save() {
+        var ss = mapServiceFactory.update($scope.currentService);
+    }
 
+    $scope.save = save;
     init();
 });
 

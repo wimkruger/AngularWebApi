@@ -9,17 +9,6 @@ namespace ProfileManager.Controllers
     public class ServicesController : ApiController
     {
 
-        /*rivate readonly ITaskFactory<MapService, MapServiceDto> _factory;
-
-        public ServicesController(ITaskFactory<MapService, MapServiceDto> factory)
-        {
-            _factory = factory;
-        }
-        public ServicesController() : this(new TaskFactory<MapService, MapServiceDto>())
-        {
-            
-        }*/
-
         public IEnumerable<MapServiceDto> GetAllServices()
         {
             using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapService,MapServiceDto>>())

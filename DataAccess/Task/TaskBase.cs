@@ -27,8 +27,6 @@ namespace DataAccess.Task
             CreateMapping();
         }
 
-        public TaskBase() : this(new RepositoryFactory<T>(), SessionManager.SessionFactory) { }
-
         public  virtual  void CreateMapping()
         {
             Mapper.CreateMap<T, TDto>();
@@ -67,7 +65,7 @@ namespace DataAccess.Task
             var data = Mapper.Map<T>(item);
             if (!this.Repository.Contains(data))
                 return false;
-            this.Repository.Add(data);
+            this.Repository.Update(data);
             return true;
         }
 

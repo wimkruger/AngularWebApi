@@ -10,8 +10,8 @@ namespace DataAccess.Dtos
         public  MapServiceType ServiceType { get; set; }
         public  string ServiceName { get; set; }
         public  string Folder { get; set; }
-        public  int MinimunResolution { get; set; }
-        public  int MaximumResolution { get; set; }
+        public  decimal? MinimunResolution { get; set; }
+        public  decimal? MaximumResolution { get; set; }
         public  decimal? Opacity { get; set; }
         public  bool SupportMapOperations { get; set; }
         public  bool SupportQueryOperations { get; set; }
