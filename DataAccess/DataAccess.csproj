@@ -81,10 +81,8 @@
     <Compile Include="Specifications\ISpecification.cs" />
     <Compile Include="Specifications\MapLayerByMapServiceIdSepcification.cs" />
     <Compile Include="Task\ITask.cs" />
-    <Compile Include="Task\ITaskFactory.cs" />
     <Compile Include="Task\ProfileTask.cs" />
     <Compile Include="Task\TaskBase.cs" />
-    <Compile Include="Task\TaskFactory.cs" />
     <Compile Include="Utils\AuditEventListener.cs" />
     <Compile Include="Utils\ConfigurationBuilder.cs" />
     <Compile Include="Utils\EnumConvention.cs" />

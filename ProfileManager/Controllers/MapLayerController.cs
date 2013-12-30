@@ -13,11 +13,12 @@ namespace ProfileManager.Controllers
 {
     public class MapLayerController : ApiController
     {
-        private readonly ITaskFactory<MapLayer, MapLayerDto> _factory = new TaskFactory<MapLayer, MapLayerDto>();
+//        private readonly ITaskFactory<MapLayer, MapLayerDto> _factory = new TaskFactory<MapLayer, MapLayerDto>();
+        
         // GET api/maplayer
         public IEnumerable<MapLayerDto> Get()
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapLayer, MapLayerDto>>())
             {
                 return task.GetAll();
             }
@@ -26,7 +27,7 @@ namespace ProfileManager.Controllers
         // GET api/maplayer/5
         public MapLayerDto Get(int id)
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapLayer, MapLayerDto>>())
             {
                 return task.GetById(id);
             }
@@ -35,7 +36,7 @@ namespace ProfileManager.Controllers
         [ActionName("GetByMyService")]
          public IEnumerable<MapLayerDto> GetLayersByMapService(int mapServiceId)
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapLayer, MapLayerDto>>())
             {
                 var spec = new MapLayerByMapServiceIdSepcification(mapServiceId);
                 return task.FindByCriteria(spec);

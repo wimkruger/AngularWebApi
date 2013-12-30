@@ -59,7 +59,7 @@ namespace DataAccess.Task
         {
             var repo = new NHibernateRepository<Permission>(Session);
             var permission = Mapper.Map<Permission>(dto);
-            repo.Add(permission);
+            repo.Update(permission);
             return true;
         }
 

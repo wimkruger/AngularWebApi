@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using DataAccess.Dtos;
 using DataAccess.Task;
@@ -13,7 +9,7 @@ namespace ProfileManager.Controllers
     public class ServicesController : ApiController
     {
 
-        private readonly ITaskFactory<MapService, MapServiceDto> _factory;
+        /*rivate readonly ITaskFactory<MapService, MapServiceDto> _factory;
 
         public ServicesController(ITaskFactory<MapService, MapServiceDto> factory)
         {
@@ -22,11 +18,11 @@ namespace ProfileManager.Controllers
         public ServicesController() : this(new TaskFactory<MapService, MapServiceDto>())
         {
             
-        }
+        }*/
 
         public IEnumerable<MapServiceDto> GetAllServices()
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapService,MapServiceDto>>())
             {
                 return task.GetAll();
             }
@@ -34,7 +30,7 @@ namespace ProfileManager.Controllers
 
         public IHttpActionResult GetService(int id)
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapService, MapServiceDto>>())
             {
                 var service = task.GetById(id);
                 if (service == null)
@@ -46,7 +42,7 @@ namespace ProfileManager.Controllers
 
         public bool PutService(MapServiceDto mapService)
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapService, MapServiceDto>>())
             {
                 return task.Update(mapService);
             }

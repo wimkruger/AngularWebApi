@@ -23,12 +23,9 @@ namespace DataAccess.Repositories
 
         public bool Update(T item)
         {
-            bool result = true;
+            bool result = false;
             Transact(() =>
                 {
-                    var db = Session.Get<T>(item.Id);
-                    if (db == null)
-                        result = false;
                     Session.Update(item);
                     result = true;
                 });

@@ -10,20 +10,10 @@ namespace ProfileManager.Controllers
     public class ProfilesController : ApiController
     {
 
-        private readonly ITaskFactory<Profile, ProfileDto> _factory;
-
-        public ProfilesController() : this(new TaskFactory<Profile, ProfileDto>())
-        {
-        }
-
-        public ProfilesController(ITaskFactory<Profile, ProfileDto> factory)
-        {
-            _factory = factory;
-        }
-
+        
         public IEnumerable<ProfileDto> GetAllProfiles()
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var profiles =  task.GetAll();
                 return profiles;
@@ -32,7 +22,7 @@ namespace ProfileManager.Controllers
 
         public IHttpActionResult GetProfile(int id)
         {
-            using (var task = _factory.CreateTask())
+            using (var task = ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var profile = task.GetById(id);
                 if (profile == null)
@@ -43,7 +33,7 @@ namespace ProfileManager.Controllers
 
         public bool Put(ProfileDto profile)
         {
-            using (var task = (ProfileTask) _factory.CreateTask())
+            using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var result = task.Update(profile);
                 return (result);
@@ -53,7 +43,7 @@ namespace ProfileManager.Controllers
         [Route("api/profiles/{id}/mapServices")]
         public IEnumerable<MapServiceDto> GetMapServicesByProfile(int id)
         {
-            using (var task = (ProfileTask) _factory.CreateTask())
+            using (var task = (ProfileTask) ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var services = task.GetRelatedServices(id);
                 return services;
@@ -63,7 +53,7 @@ namespace ProfileManager.Controllers
         [Route("api/profiles/{id}/adGroups")]
         public IEnumerable<ActiveDirectoryGroupDto> GetActiveDirectoryGroupsByProfile(int id)
         {
-            using (var task = (ProfileTask)_factory.CreateTask())
+            using (var task = (ProfileTask) ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var services = task.GetRelatedActiveDirectoryGroups(id);
                 return services;
@@ -73,7 +63,7 @@ namespace ProfileManager.Controllers
         [Route("api/profiles/{id}/searchEntities")]
         public IEnumerable<PermissionDto> GetSearchEntitiesByProfile(int id)
         {
-            using (var task = (ProfileTask)_factory.CreateTask())
+            using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var entities = task.GetRelatedSearchEntities(id);
                 return entities;
@@ -84,7 +74,7 @@ namespace ProfileManager.Controllers
         [AcceptVerbs("PUT")]
         public bool PutSearchEntitiesByProfile(PermissionDto dto)
         {
-            using (var task = (ProfileTask)_factory.CreateTask())
+            using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var entities = task.Update(dto);
                 return entities;
