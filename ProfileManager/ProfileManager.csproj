@@ -158,8 +158,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="ComponentConfiguration.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MapLayerController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -183,9 +185,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Images\circleWait.gif" />
+    <Content Include="Partials\menuItem.html" />
     <Content Include="Partials\Profile.html" />
     <Content Include="Partials\profileAdGroups.html" />
     <Content Include="Partials\profileDetail.html" />
+    <Content Include="Partials\profileMenus.html" />
     <Content Include="Partials\profilePermissions.html" />
     <Content Include="Partials\profileList.html" />
     <Content Include="Partials\profileMapServices.html" />
@@ -201,6 +206,7 @@
     <Content Include="Scripts\dataProviders.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\StateMachine.js" />
+    <Content Include="Scripts\waitIndicator.js" />
     <Content Include="testme.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -248,6 +254,9 @@
       <Project>{fe094320-fb2e-4e50-a7b2-f329e6f627c2}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\devpublish.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

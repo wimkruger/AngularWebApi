@@ -63,10 +63,7 @@ namespace DataAccess.Task
         public virtual bool Update(TDto item)
         {
             var data = Mapper.Map<T>(item);
-            if (!this.Repository.Contains(data))
-                return false;
-            this.Repository.Update(data);
-            return true;
+            return this.Repository.Update(data);
         }
 
         public IEnumerable<TDto> FindByCriteria(ISpecification<T> spec)

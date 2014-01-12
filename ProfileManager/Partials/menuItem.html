@@ -1,0 +1,10 @@
+﻿<table class="table table-striped table-bordered">
+	<tr>
+		<th>Action Text</th>
+	    <th>Indent Level</th>
+	</tr>
+	<tr data-ng-repeat="menuItem in currentMenu.Items | orderBy: 'Sequence'">
+		<td>{{menuItem.ActionText}}</td>
+        <td>{{menuItem.IndentLevel}}</td>
+	</tr>
+</table>

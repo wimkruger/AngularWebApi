@@ -62,6 +62,8 @@
     <Compile Include="Dtos\ActiveDirectoryGroupDto.cs" />
     <Compile Include="Dtos\mapLayerDto.cs" />
     <Compile Include="Dtos\MapServiceDto.cs" />
+    <Compile Include="Dtos\MenuDto.cs" />
+    <Compile Include="Dtos\MenuItemDto.cs" />
     <Compile Include="Dtos\PermissionDto.cs" />
     <Compile Include="Dtos\ProfileDto.cs" />
     <Compile Include="Mappings\ActiveDirectoryGroupMap.cs" />
@@ -70,6 +72,8 @@
     <Compile Include="Mappings\EntityMapping.cs" />
     <Compile Include="Mappings\MapLayerMapping.cs" />
     <Compile Include="Mappings\MapServiceMapping.cs" />
+    <Compile Include="Mappings\MenuItemMapping.cs" />
+    <Compile Include="Mappings\MenuMapping.cs" />
     <Compile Include="Mappings\PermissionMap.cs" />
     <Compile Include="Mappings\ProfileMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,7 +84,9 @@
     <Compile Include="Repositories\TransactionBase.cs" />
     <Compile Include="Specifications\ISpecification.cs" />
     <Compile Include="Specifications\MapLayerByMapServiceIdSepcification.cs" />
+    <Compile Include="Task\DtoMapping.cs" />
     <Compile Include="Task\ITask.cs" />
+    <Compile Include="Task\MenuTask.cs" />
     <Compile Include="Task\ProfileTask.cs" />
     <Compile Include="Task\TaskBase.cs" />
     <Compile Include="Utils\AuditEventListener.cs" />

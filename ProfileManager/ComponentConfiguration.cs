@@ -24,6 +24,7 @@ namespace ProfileManager
                 x.For(typeof (IReporsitoryFactory<>)).Use(typeof (RepositoryFactory<>));
                 x.For<ISessionFactory>().Use(SessionManager.SessionFactory);
                 x.For<ITask<Profile, ProfileDto>>().Use<ProfileTask>();
+                x.For<ITask<Menu, MenuDto>>().Use<MenuTask>();
             });
         }
 

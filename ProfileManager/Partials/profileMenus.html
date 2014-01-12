@@ -1,0 +1,11 @@
+﻿<div class="container">
+    <div class="list-group">
+        <a data-ng-repeat="profileMenu in profileMenus | orderBy: 'SequenceNumber'" 
+            ui-sref="profiles.details.menus.items({menuId:profileMenu.Id})"  class="list-group-item">
+            <span class="badge">{{profileMenu.SequenceNumber}}</span>
+            {{profileMenu.Name}}
+        </a>
+    </div>
+</div>
+
+<div ui-view></div>

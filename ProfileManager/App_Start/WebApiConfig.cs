@@ -11,6 +11,11 @@ namespace ProfileManager
         {
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
+                name: "serviceLayers",
+                routeTemplate: "api/services/{id}/layers",
+                defaults: new {controller = "MapLayer", action = "GetLayersByMapService"}
+                );
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }

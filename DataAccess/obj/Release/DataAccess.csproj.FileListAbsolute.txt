@@ -1,0 +1,16 @@
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\DataAccess.dll
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\DataAccess.pdb
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\AutoMapper.dll
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\AutoMapper.Net4.dll
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\Domain.dll
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\FluentNHibernate.dll
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\log4net.dll
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\NHibernate.dll
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\Domain.pdb
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\AutoMapper.xml
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\FluentNHibernate.xml
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\log4net.xml
+C:\Projects\AngularWebApi-master\DataAccess\bin\Release\NHibernate.xml
+C:\Projects\AngularWebApi-master\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+C:\Projects\AngularWebApi-master\DataAccess\obj\Release\DataAccess.dll
+C:\Projects\AngularWebApi-master\DataAccess\obj\Release\DataAccess.pdb

@@ -15,6 +15,7 @@ namespace DataAccess.Mappings
             HasManyToMany<ActiveDirectoryGroup>(x => x.ActiveDirectoryGroups).LazyLoad().
                 Table("USER_GROUP_PROFILE").ParentKeyColumn("PROFILE_ID").ChildKeyColumn("USER_GROUP_ID");
             HasMany<Permission>(x => x.Permissions).KeyColumn("PROFILE_ID").LazyLoad();
+            HasMany<Menu>(x => x.Menus).KeyColumn("PROFILE_ID").LazyLoad();
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Domain
         public virtual IList<MapService> MapServices { get; set; }
         public virtual IList<ActiveDirectoryGroup> ActiveDirectoryGroups { get; set; }
         public virtual IList<Permission> Permissions { get; set; }
+        public virtual IList<Menu> Menus { get; set; }
     }
 }

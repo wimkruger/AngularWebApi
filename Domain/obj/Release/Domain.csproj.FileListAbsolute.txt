@@ -1,0 +1,4 @@
+C:\Projects\AngularWebApi-master\Domain\bin\Release\Domain.dll
+C:\Projects\AngularWebApi-master\Domain\bin\Release\Domain.pdb
+C:\Projects\AngularWebApi-master\Domain\obj\Release\Domain.dll
+C:\Projects\AngularWebApi-master\Domain\obj\Release\Domain.pdb

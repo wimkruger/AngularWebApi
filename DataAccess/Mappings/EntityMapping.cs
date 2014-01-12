@@ -7,7 +7,7 @@ namespace DataAccess.Mappings
     {
          public EntityMapping()
          {
-             Schema("PROFILEDATA");
+             Schema("GEOFIND_META");
              Id(x => x.Id, "OBJECT_ID");
          }
     }

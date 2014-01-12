@@ -24,6 +24,8 @@ namespace DataAccess.Task
             Mapper.CreateMap<ActiveDirectoryGroup, ActiveDirectoryGroupDto>();
             Mapper.CreateMap<Permission, PermissionDto>();
             Mapper.CreateMap<PermissionDto, Permission>();
+            Mapper.CreateMap<Menu, MenuDto>();
+            Mapper.CreateMap<MenuItem, MenuItemDto>();
         }
 
         public IEnumerable<MapServiceDto> GetRelatedServices(int profileId)
@@ -68,6 +70,14 @@ namespace DataAccess.Task
             var permission = Mapper.Map<Permission>(dto);
             repo.Update(permission);
             return true;
+        }
+
+        public IEnumerable<MenuDto> GetRelatedMenus(int profileId)
+        {
+            var profile = this.Repository.FindById(profileId);
+            var menus = profile.Menus.ToList();
+            var menuDtos = menus.Select(Mapper.Map<MenuDto>);
+            return menuDtos;
         }
 
     }

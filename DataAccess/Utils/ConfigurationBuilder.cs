@@ -12,12 +12,12 @@ namespace DataAccess.Utils
 
         public Configuration Build()
         {
-            /*Configuration cfg = LoadConfigurationFromFile();
+            Configuration cfg = LoadConfigurationFromFile();
             if (cfg == null)
-            {*/
-            Configuration cfg = new Configuration().Configure();
-               /* SaveConfigurationToFile(cfg);
-            }*/
+            {
+            cfg = new Configuration().Configure();
+                SaveConfigurationToFile(cfg);
+            }
             return cfg;
         }
 

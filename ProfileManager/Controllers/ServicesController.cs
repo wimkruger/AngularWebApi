@@ -6,36 +6,8 @@ using Domain;
 
 namespace ProfileManager.Controllers
 {
-    public class ServicesController : ApiController
+    public class ServicesController : BaseController<MapService, MapServiceDto>
     {
-
-        public IEnumerable<MapServiceDto> GetAllServices()
-        {
-            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapService,MapServiceDto>>())
-            {
-                return task.GetAll();
-            }
-        }
-
-        public IHttpActionResult GetService(int id)
-        {
-            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapService, MapServiceDto>>())
-            {
-                var service = task.GetById(id);
-                if (service == null)
-                    return NotFound();
-                return Ok(service);
-            }
-            
-        }
-
-        public bool PutService(MapServiceDto mapService)
-        {
-            using (var task = ComponentConfiguration.Container.GetInstance<ITask<MapService, MapServiceDto>>())
-            {
-                return task.Update(mapService);
-            }
-        }
 
 
         [Route("api/services/{id}/layers")]

@@ -7,38 +7,11 @@ using Profile = Domain.Profile;
 
 namespace ProfileManager.Controllers
 {
-    public class ProfilesController : ApiController
+    public class ProfilesController : BaseController<Profile, ProfileDto>
     {
 
         
-        public IEnumerable<ProfileDto> GetAllProfiles()
-        {
-            using (var task = ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
-            {
-                var profiles =  task.GetAll();
-                return profiles;
-            }
-        }
-
-        public IHttpActionResult GetProfile(int id)
-        {
-            using (var task = ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
-            {
-                var profile = task.GetById(id);
-                if (profile == null)
-                    return NotFound();
-                return Ok(profile);
-            }
-        }
-
-        public bool Put(ProfileDto profile)
-        {
-            using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
-            {
-                var result = task.Update(profile);
-                return (result);
-            }
-        }
+        
 
         [Route("api/profiles/{id}/mapServices")]
         public IEnumerable<MapServiceDto> GetMapServicesByProfile(int id)
@@ -60,8 +33,8 @@ namespace ProfileManager.Controllers
             }
         }
 
-        [Route("api/profiles/{id}/searchEntities")]
-        public IEnumerable<PermissionDto> GetSearchEntitiesByProfile(int id)
+        [Route("api/profiles/{id}/permissions")]
+        public IEnumerable<PermissionDto> GetPermissions(int id)
         {
             using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
@@ -70,14 +43,24 @@ namespace ProfileManager.Controllers
             }
         }
 
-        [Route("api/profiles/{id}/searchEntities")]
+        [Route("api/profiles/{id}/permissions")]
         [AcceptVerbs("PUT")]
-        public bool PutSearchEntitiesByProfile(PermissionDto dto)
+        public bool PutPermission(PermissionDto dto)
         {
             using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
             {
                 var entities = task.UpdatePermission(dto);
                 return entities;
+            }
+        }
+
+        [Route("api/profiles/{id}/menus")]
+        public IEnumerable<MenuDto> GetMenus(int id)
+        {
+            using (var task = (ProfileTask)ComponentConfiguration.Container.GetInstance<ITask<Profile, ProfileDto>>())
+            {
+                var menus = task.GetRelatedMenus(id);
+                return menus;
             }
         }
     }

@@ -13,3 +13,7 @@ C:\Projects\AngularWebApi\AngularWebApi-master\Domain\obj\Debug\Domain.csprojRes
 C:\Projects\AngularWebApi\AngularWebApi-master\Domain\obj\Debug\Domain.dll
 C:\Projects\AngularWebApi\AngularWebApi-master\Domain\obj\Debug\Domain.pdb
 C:\Projects\ProfileManagerSolution\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Projects\AngularWebApi-master\Domain\bin\Debug\Domain.dll
+C:\Projects\AngularWebApi-master\Domain\bin\Debug\Domain.pdb
+C:\Projects\AngularWebApi-master\Domain\obj\Debug\Domain.dll
+C:\Projects\AngularWebApi-master\Domain\obj\Debug\Domain.pdb
